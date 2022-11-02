@@ -8,23 +8,13 @@ public class TrafficLights {
         while (true) {
             Thread.sleep(3000);
             System.out.println("light = " + light);
-            switch (light) {
-                case RED:
-                    light = REDANDYELLOW;
-                    break;
-                case REDANDYELLOW:
-                    light = GREEN;
-                    break;
-                case GREEN:
-                    light = YELLOW;
-                    break;
-                case YELLOW:
-                    light = RED;
-                    break;
-                default:
-                    light = RED;
-
-            }
+            light = switch (light) {
+                case RED -> REDANDYELLOW;
+                case REDANDYELLOW -> GREEN;
+                case GREEN -> YELLOW;
+                case YELLOW -> RED;
+                default -> RED;
+            };
         }
     }
 }
