@@ -1,14 +1,14 @@
 package amazon;
 
-public class Book {
+
+public class Book extends Product {
     private String title;
     private String author;
-    private int price;
 
-    public Book(String title, String author, int price) {
+    public Book(String title, String author, int price, long productID) {
+        super(productID, price);
         this.title = title;
         this.author = author;
-        this.price = price;
     }
 
     public Book() {
@@ -31,18 +31,14 @@ public class Book {
         this.author = author;
     }
 
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
     public void printDetails() {
         System.out.println("Title: " + title);
         System.out.println("Author: " + author);
         System.out.println("Price: " + price);
         System.out.println();
+    }
+
+    public String toString() {
+        return "Title: " + title + System.lineSeparator() + "Author: " + author + System.lineSeparator() + "Price: " + price;
     }
 }

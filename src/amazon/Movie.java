@@ -1,6 +1,6 @@
 package amazon;
 
-public class Movie {
+public class Movie extends Product {
     private String director = null;
     private String title;
     private MovieGenre genre;
@@ -8,19 +8,14 @@ public class Movie {
     private long productID;
 
     public Movie(String title, MovieGenre genre, int price, int productID) {
+        super(productID, price);
         this.title = title;
         this.genre = genre;
-        this.price = price;
-        this.productID = productID;
     }
 
     public Movie(String title, MovieGenre genre, int price, int productID, String director) {
         this(title, genre, price, productID);
         this.director = director;
-    }
-
-    public long getProductID() {
-        return productID;
     }
 
     public void setTitle(String title) {
@@ -31,9 +26,6 @@ public class Movie {
         this.genre = genre;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
 
     public void printDetails() {
         System.out.println("Title: " + title);
