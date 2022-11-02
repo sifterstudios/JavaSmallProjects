@@ -1,6 +1,6 @@
 package amazon;
 
-public class Product {
+public abstract class Product {
     long productID;
     int price;
 
@@ -28,4 +28,6 @@ public class Product {
     public void setPrice(int price) {
         this.price = price;
     }
+
+    public abstract void printDetails();
 }

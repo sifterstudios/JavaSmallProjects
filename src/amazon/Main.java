@@ -14,18 +14,14 @@ public class Main {
 
         Movie theoryOfEverything = new Movie("The Theory Of Everything", MovieGenre.DRAMA, 179, 753753);
         Movie dieHard = new Movie("Die Hard", MovieGenre.ACTION, 179, 7532);
-        Movie inception = new Movie("Inception", MovieGenre.ACTION, 150, 7537853, "Christopher Nolan");
+        MovieWithDirector inception = new MovieWithDirector("Inception", MovieGenre.ACTION, 150, 7537853, "Christopher Nolan");
         addMovieToMap(theoryOfEverything, dieHard, inception);
 
         Product[] objects = {lotr, headFirst, dieHard, theoryOfEverything, inception};
         List<Product> objectsList = Arrays.stream(objects).toList();
 
-        for (Product object : objectsList) {
-            if (object instanceof Book) {
-                ((Book) object).printDetails();
-            } else if (object instanceof Movie) {
-                ((Movie) object).printDetails();
-            }
+        for (Product product : objectsList) {
+            product.printDetails();
         }
 
         long iD1 = 7537853;
