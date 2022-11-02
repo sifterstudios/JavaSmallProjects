@@ -8,11 +8,11 @@ public class Main {
         Map<String, Integer> cityAndPopulation = new HashMap<>();
 
         System.out.println("How many cities do you want to register? ");
-        int numberOfCities = s.nextInt();
-        System.out.println();
+        int numberOfCities = Integer.parseInt(s.nextLine());
 
         getCityAndPopulationFromUser(numberOfCities, cityAndPopulation);
         var sortedCityAndPopulation = sortMapByPopulationDesc(cityAndPopulation);
+        System.out.println("This is what you inputted, sorted by population (Highest to lowest)!");
 
         printCityOverview(sortedCityAndPopulation);
 
@@ -21,7 +21,6 @@ public class Main {
 
     private static void printCityOverview(Map<String, Integer> sortedCityAndPopulation) {
         int printCount = 0;
-        System.out.println("This is what you inputted, sorted by population (Highest to lowest)!");
         while (printCount != sortedCityAndPopulation.size()) {
             for (Map.Entry<String, Integer> entry : sortedCityAndPopulation.entrySet()) {
                 String printCity = parseCityName(entry.getKey());
@@ -35,8 +34,7 @@ public class Main {
     private static String parseCityPopulation(Integer population) {
         int numberOfAngleBrackets = population / 50000;
 
-        return ">".repeat(Math.max(0, numberOfAngleBrackets)) +
-                population;
+        return ">".repeat(Math.max(0, numberOfAngleBrackets)) + population;
     }
 
     private static String parseCityName(String entry) {
