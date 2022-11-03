@@ -1,23 +1,16 @@
 package amazon;
 
-public class Movie extends Product {
-    private String title;
-    private MovieGenre genre;
-    private int price;
-    private long productID;
+public class Movie implements Product, Comparable<Movie> {
+    private final String title;
+    private final MovieGenre genre;
+    private final int price;
+    private final long productID;
 
     public Movie(String title, MovieGenre genre, int price, int productID) {
-        super(productID, price);
         this.title = title;
         this.genre = genre;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setGenre(MovieGenre genre) {
-        this.genre = genre;
+        this.price = price;
+        this.productID = productID;
     }
 
 
@@ -29,5 +22,14 @@ public class Movie extends Product {
         System.out.println();
     }
 
+    @Override
+    public int compareTo(Movie m) {
+        if (productID == m.productID) return 0;
+        return productID < m.productID ? -1 : 1;
+    }
+
+    public Long getProductID() {
+        return productID;
+    }
 }
 

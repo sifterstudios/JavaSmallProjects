@@ -1,7 +1,7 @@
 package amazon;
 
 public class MovieWithDirector extends Movie {
-    private String director = null;
+    private final String director;
 
     public MovieWithDirector(String title, MovieGenre genre, int price, int productID, String director) {
         super(title, genre, price, productID);
