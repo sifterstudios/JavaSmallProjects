@@ -8,9 +8,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Book lotr = new Book("Lord of the Rings", "J.R.R Tolkien", 799, 57365372);
-        Book headFirst = new Book("Head First Java", "Bert Bates & Kathy Sierra", 699, 75643276);
-        ChildrensBook joppe = new ChildrensBook("Rädda Joppe – död eller levande", "Gunnel Linde", 1, "DANGER, might induce strong reactions in children of all ages!", 75326425);
+        Book lotr = new Book("Lord of the Rings", "J.R.R Tolkien", 799);
+        Book headFirst = new Book("Head First Java", "Bert Bates & Kathy Sierra", 699);
+        ChildrensBook joppe = new ChildrensBook("Rädda Joppe – död eller levande", "Gunnel Linde", 1, "DANGER, might induce strong reactions in children of all ages!");
 
         Movie theoryOfEverything = new Movie("The Theory Of Everything", MovieGenre.DRAMA, 179, 753753);
         Movie dieHard = new Movie("Die Hard", MovieGenre.ACTION, 179, 7532);

@@ -1,34 +1,15 @@
 package amazon;
 
 
-public class Book extends Product {
-    private String title;
-    private String author;
+public class Book implements Product {
+    private final String title;
+    private final String author;
+    private final int price;
 
-    public Book(String title, String author, int price, long productID) {
-        super(productID, price);
+    public Book(String title, String author, int price) {
         this.title = title;
         this.author = author;
-    }
-
-    public Book() {
-
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
+        this.price = price;
     }
 
     public void printDetails() {
